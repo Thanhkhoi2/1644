@@ -1,0 +1,35 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Product</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Danh sách sản phẩm</h1>
+    
+    <!-- Form thêm sản phẩm -->
+    <form action="/quotes" method="POST">
+        <input type="text" placeholder="Name" name="Name" />
+        <input type="text" placeholder="Id" name="Id" />
+        <input type="text" placeholder="Price" name="Price" />
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Hiển thị danh sách sản phẩm -->
+    <h2>Danh sách sản phẩm</h2>
+    <ul class="quotes">
+        <% quotes.forEach(quote => { %>
+            <li class="quote">
+                <span><%= quote.Name %></span>:
+                <span><%= quote.Id %></span>:
+                <span><%= quote.Price %></span>
+            </li>
+        <% }); %>
+    </ul>
+
+
+    <script src="/main.js"></script>
+</body>
+</html>
